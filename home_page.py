@@ -18,11 +18,21 @@ class CL_HomePage(CL_BasePage):
         # Verificar se o teste acessou a página inicial (Verifica o elemento do titulo da Home Page)
         self.verificar_se_elemento_existe(self.titulo_pagina)
 
+
 class CL_MenuLateral(CL_BasePage): # interação com o Menu lateral (3 risquinhos)
     def __init__(self, browser):
         super().__init__(browser)
-        self.menu_lateral_esq = (By.ID, "react-burger-menu-btn")
+        self.menu_lateral_esq = (By.ID, "react-burger-menu-btn") # Variavel que identifica o elemento
 
     def acessar_menu_lateral_esq(self):
         self.clicar(self.menu_lateral_esq)
-      
+
+
+class CL_OptnAbout(CL_BasePage): # interação com o Menu lateral (3 risquinhos)
+    def __init__(self, browser):
+        super().__init__(browser)
+        self.optn_about = (By.ID, "about_sidebar_link") # Variavel que identifica o elemento
+
+    def acessar_about(self):
+        self.clicar(self.menu_lateral_esq)
+        
