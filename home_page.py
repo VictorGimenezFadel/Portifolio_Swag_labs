@@ -1,9 +1,6 @@
 """"
-SEÇÃO 07
-home_page.py
+Interações / Configurações da página Home
 """""
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.wait import WebDriverWait
 from base_page import CL_BasePage
 from Testes.conftest import browser
 from selenium.webdriver.common.by import By
@@ -35,4 +32,3 @@ class CL_OptnAbout(CL_BasePage): # interação com o Menu lateral (3 risquinhos)
 
     def acessar_about(self):
         self.clicar(self.menu_lateral_esq)
-        
