@@ -17,7 +17,7 @@ from conftest import browser
 
 
 @pytest.mark.usefixtures("browser")
-@pytest.mark.navegar #mark para executar o teste através do pytes
+@pytest.mark.navegar #mark para executar o teste através do pytest
 class TestCT01_Swag_labs:
     def test_ct01_swaglabs_navegação(self, browser):
 
