@@ -1,26 +1,21 @@
-"""
+""""
+SEÇÃO 07 - Criando método para verificar se elemento existe na tela
 conftest.py
 """
-
-import time
-
 import pytest
 from selenium import webdriver
-from selenium.webdriver.support.wait import WebDriverWait
 
 
 @pytest.fixture
 def browser():
 
-    #Setup
+    # Setup
     browser = webdriver.Edge()
+    browser.implicitly_wait(15)
     browser.maximize_window()
     browser.get("https://www.saucedemo.com/")
-    WebDriverWait(browser, 60)
-    time.sleep(1)
 
     yield browser
 
-    #Teardown
+    # Teardown
     browser.quit()
-  
