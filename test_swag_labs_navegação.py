@@ -31,8 +31,8 @@ class TestCT01_Swag_labs:
         home_page.verificar_login_bem_sucedido()
 
         # Primeira interação com o Menu lateral (3 risquinhos)
-        menu_lateral = CL_MenuLateral(browser)
-        menu_lateral.acessar_menu_lateral_esq()
+        acessar_menu_lateral = CL_MenuLateral(browser)
+        acessar_menu_lateral.menu_lateral_esq()
 
 
 
