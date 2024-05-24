@@ -19,20 +19,21 @@ from conftest import browser
 class TestCT01_Swag_labs:
     def test_ct01_swaglabs_navegação(self, browser):
 
+        # Primeiro Login
         login_page = CL_LoginPage(browser)
         login_page.fazer_login("standard_user", "secret_sauce")
 
 
-        #Tela inicial - Home
+        # Tela inicial - Home
 
-
-        # Conexão com a home_page.py e os métodos dentro dela
+        # Conexão com a home_page.py e os métodos dentro dela - Home Page
         home_page = CL_HomePage(browser)  # CL_LoginPage é a class la no arquivo login_page.py
         home_page.verificar_login_bem_sucedido()
 
-        # Primeira interação com o Menu lateral (3 risquinhos)
-        acessar_menu_lateral = CL_MenuLateral(browser)
-        acessar_menu_lateral.menu_lateral_esq()
+
+        # Primeira interação com o Menu lateral (3 risquinhos) - Home Page
+        menu_lateral_esq = CL_MenuLateral(browser)
+        menu_lateral_esq.acessar_menu_lateral_esq()
 
 
 
