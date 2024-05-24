@@ -1,6 +1,8 @@
 """
 Navegação básica no site Swag Labs
 
+Arquivo central onde os médotos e funções serão aplicados
+
 Esse teste está em desenvolvimento
 """
 import time
@@ -15,7 +17,7 @@ from conftest import browser
 
 
 @pytest.mark.usefixtures("browser")
-@pytest.mark.login
+@pytest.mark.navegar #mark para executar o teste através do pytes
 class TestCT01_Swag_labs:
     def test_ct01_swaglabs_navegação(self, browser):
 
