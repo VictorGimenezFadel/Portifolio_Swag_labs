@@ -1,3 +1,7 @@
+"""
+conftest.py
+"""
+
 import time
 
 import pytest
