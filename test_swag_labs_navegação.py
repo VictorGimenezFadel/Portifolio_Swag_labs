@@ -3,11 +3,14 @@ Navegação básica no site Swag Labs
 
 Esse teste está em desenvolvimento
 """
-import time
-import pytest
-from Pages.login_page import CL_LoginPage  # Pages é a pasta onde está a login_page
-from Pages.home_page import CL_HomePage, CL_MenuLateral,CL_OptnAbout, CL_FecharPopUp
+
+# Import dos arquivos .py e das classes presentes dentro deles
+from Pages.login_page import CL_LoginPage
+from Pages.home_page import CL_HomePage, CL_MenuLateral,CL_OptnAbout
+from Pages.about_page import CL_FecharPopUp
+
 from conftest import browser
+import pytest
 
 
 @pytest.mark.usefixtures("browser")
