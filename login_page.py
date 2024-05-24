@@ -1,6 +1,5 @@
 """
-ORGANIZAÇÃO DA login_page - COMANDOS DE LOGIN
-login_page.py
+Interações / Configurações da página de Login
 """
 from selenium.webdriver.common.by import By
 from BasePage import CL_BasePage
