@@ -1,44 +1,4 @@
- #Voltar para a tela anterior -Home (Back)
-        browser.back()
-
-
-
-
-
-        #Interação com o carrinho (ADD)
-
-        #Adicionar item ao carrinho (Sauce Labs Backpack)
-        add_carrinho_backpack = WebDriverWait(browser, 30).until(
-            EC.element_to_be_clickable((By.ID, "add-to-cart-sauce-labs-backpack")))
-        add_carrinho_backpack.click()
-
-
-
-        #Adicionar item ao carrinho (Sauce Labs Bike Light)
-        add_carrinho_bike_light = WebDriverWait(browser, 30).until(
-            EC.element_to_be_clickable((By.ID, "add-to-cart-sauce-labs-bike-light")))
-        add_carrinho_bike_light.click()
-
-
-
-        #Adicionar item ao carrinho (Sauce Labs Onesie)
-        browser.execute_script("window.scrollBy(0, 500);") #Rolar tela para baixo
-        add_carrinho_onesie = WebDriverWait(browser, 30).until(
-            EC.element_to_be_clickable((By.ID, "add-to-cart-sauce-labs-onesie")))
-        add_carrinho_onesie.click()
-
-
-
-        #Rolar toda tela para cima
-        browser.execute_script("window.scrollBy(0, -500);")
-        WebDriverWait(browser, 30).until(
-            EC.element_to_be_clickable((By.CLASS_NAME, "shopping_cart_link"))) #Espera até que o elemento desejado seja visível e clicavel na página
-
-
-
-
-
-        #Dentro do carrinho - icone
+         #Dentro do carrinho - icone
 
         #Entrar no carrinho
         entrar_carrinho = browser.find_element(By.CLASS_NAME, "shopping_cart_link")
