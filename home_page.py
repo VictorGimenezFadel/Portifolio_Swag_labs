@@ -6,14 +6,14 @@ from Testes.conftest import browser
 from selenium.webdriver.common.by import By
 
 
+# 1° acesso a Página Home
 class CL_HomePage(BasePage):
     def __init__(self, browser):
         super().__init__(browser)
         self.titulo_pagina = (By.XPATH, "//span[@class='title']")
 
     def verificar_login_bem_sucedido(self):
-        # Verificar se o teste acessou a página inicial (Verifica o elemento do titulo da Home Page)
-        self.verificar_se_elemento_existe(self.titulo_pagina)
+        self.verificar_se_elemento_existe(self.titulo_pagina) # Verificar se o teste acessou a página inicial (Verifica o elemento do titulo da Home Page)
 
 
 
@@ -33,4 +33,23 @@ class CL_OptnAbout(BasePage): # interação com a opção About (Sobre)
         self.optn_about = (By.ID, "about_sidebar_link") # Variavel que identifica o elemento
 
     def acessar_about(self):
-        self.clicar(self.menu_lateral_esq)
+        self.clicar(self.optn_about)
+
+
+
+# 2° acesso a Página Home
+class CL_IdentificarItens_carrinho(BasePage):
+    def __init__(self, browser):
+        super().__init__(browser)
+        self.btn_add_item_backpack = (By.ID, "add-to-cart-sauce-labs-backpack")
+        self.btn_add_item_bike_light = (By.ID, "add-to-cart-sauce-labs-bike-light")
+        self.btn_add_item_onesie = (By.ID, "add-to-cart-sauce-labs-onesie")
+
+
+
+class CL_AddItens_carrinho(BasePage):
+    def add_item_carrinho(self,identificar_itens):
+        self.clicar(identificar_itens.btn_add_item_backpack)
+        self.clicar(identificar_itens.btn_add_item_bike_light)
+        self.clicar(identificar_itens.btn_add_item_onesie)
+        
