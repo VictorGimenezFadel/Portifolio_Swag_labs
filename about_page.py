@@ -6,6 +6,7 @@ from Testes.conftest import browser
 from selenium.webdriver.common.by import By
 
 
+# 1° acesso a Página Home
 class CL_VerificarPopUp(BasePage):
     def __init__(self, browser):
         super().__init__(browser)
@@ -22,4 +23,3 @@ class CL_FecharPopUp(BasePage):
 
     def fechar_popup_pag_about(self):
         self.clicar(self.popup_pag_about_fechar)
-      
