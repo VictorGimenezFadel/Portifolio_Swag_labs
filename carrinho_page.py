@@ -13,6 +13,8 @@ class CL_IdentificarItens_carrinho(BasePage):
         self.btn_remover_item_bike_light = (By.ID, "remove-sauce-labs-backpack")
         self.btn_remover_item_onesie = (By.ID, "remove-sauce-labs-onesie")
 
+
+
 class CL_RemoverItem_carrinho(BasePage):
     def remover_item_carrinho(self,identificar_itens):
         self.clicar(identificar_itens.btn_remover_item_bike_light)
