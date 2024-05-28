@@ -38,7 +38,7 @@ class CL_OptnAbout(BasePage): # interação com a opção About (Sobre)
 
 
 # 2° acesso a Página Home
-class CL_IdentificarItens_carrinho(BasePage):
+class CL_IdentificarItens_ParaCarrinho(BasePage):
     def __init__(self, browser):
         super().__init__(browser)
         self.btn_add_item_backpack = (By.ID, "add-to-cart-sauce-labs-backpack")
@@ -52,4 +52,14 @@ class CL_AddItens_carrinho(BasePage):
         self.clicar(identificar_itens.btn_add_item_backpack)
         self.clicar(identificar_itens.btn_add_item_bike_light)
         self.clicar(identificar_itens.btn_add_item_onesie)
-        
+
+
+
+# 1° Acesso ao carrinho
+class CL_AcessarCarrinho(BasePage):
+    def __init__(self, browser):
+        super().__init__(browser)
+        self.icone_carrinho = (By.CLASS_NAME, "shopping_cart_link")
+
+    def entrar_carrinho(self):
+        self.clicar(self.icone_carrinho)
