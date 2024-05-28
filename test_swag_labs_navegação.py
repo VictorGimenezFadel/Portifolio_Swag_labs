@@ -6,7 +6,7 @@ Esse teste está em desenvolvimento
 
 # Import dos arquivos .py e das classes presentes dentro deles
 from Pages.login_page import CL_LoginPage
-from Pages.home_page import CL_HomePage, CL_MenuLateral, CL_OptnAbout, CL_IdentificarItens_ParaCarrinho, CL_AddItens_carrinho, CL_AcessarCarrinho
+from Pages.home_page import CL_HomePage, CL_MenuLateral, CL_OptnAbout, CL_IdentificarItens_ParaCarrinho_01, CL_AddItens_carrinho_01, CL_IdentificarItens_ParaCarrinho_02, CL_AddItens_carrinho_02, CL_AcessarCarrinho
 from Pages.carrinho_page import CL_IdentificarItens_carrinho, CL_RemoverItem_carrinho
 from Pages.about_page import CL_VerificarPopUp, CL_FecharPopUp
 
@@ -58,10 +58,10 @@ class TestCT01_Swag_labs:
 
 
 
-        # Adicionar itens ao carrinho - Página Home
-        identificar_itens = CL_IdentificarItens_ParaCarrinho(browser) # Variavel para receber a class de identificação dos itens
-        adicionar_itens = CL_AddItens_carrinho(browser) # Variavel para receber a class de adicionar os itens
-        adicionar_itens.add_item_carrinho(identificar_itens) # Aplicar Variavel para receber o método de adição dos itens
+        # 1° Adição de itens ao carrinho - Página Home
+        identificar_itens_01 = CL_IdentificarItens_ParaCarrinho_01(browser) # Variavel para receber a class de identificação dos itens
+        adicionar_itens_01 = CL_AddItens_carrinho_01(browser) # Variavel para receber a class de adicionar os itens
+        adicionar_itens_01.add_item_carrinho_01(identificar_itens_01) # Aplicar Variavel para receber o método de adição dos itens
 
 
 
@@ -76,3 +76,16 @@ class TestCT01_Swag_labs:
         remover_itens = CL_RemoverItem_carrinho(browser)  # Variavel para receber a class de remoção dos itens
         remover_itens.remover_item_carrinho(identificar_itens)  # Aplicar Variavel para receber o método de remoção dos itens
         remover_itens.voltar_pag_anterior() # Pega a ultima variável e aplica o método de voltar ou avançar para a página anterior
+
+
+
+        # 2° Adição de itens ao carrinho - Página Home
+        identificar_itens_02 = CL_IdentificarItens_ParaCarrinho_02(browser) # Variavel para receber a class de identificação dos itens
+        adicionar_itens_02 = CL_AddItens_carrinho_02(browser) # Variavel para receber a class de adicionar os itens
+        adicionar_itens_02.add_item_carrinho_02(identificar_itens_02)
+
+
+
+        # 2° Acesso ao carrinho - Página Home
+        carrinho = CL_AcessarCarrinho(browser)
+        carrinho.entrar_carrinho()
