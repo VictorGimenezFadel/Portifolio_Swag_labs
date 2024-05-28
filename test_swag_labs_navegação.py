@@ -5,10 +5,27 @@ Esse teste está em desenvolvimento
 """
 
 # Import dos arquivos .py e das classes presentes dentro deles
+from conftest import browser
+import pytest
 from Pages.login_page import CL_LoginPage
-from Pages.home_page import CL_HomePage, CL_MenuLateral, CL_OptnAbout, CL_IdentificarItens_ParaCarrinho_01, CL_AddItens_carrinho_01, CL_IdentificarItens_ParaCarrinho_02, CL_AddItens_carrinho_02, CL_AcessarCarrinho
-from Pages.carrinho_page import CL_IdentificarItens_carrinho, CL_RemoverItem_carrinho
-from Pages.about_page import CL_VerificarPopUp, CL_FecharPopUp
+from Pages.home_page import (
+    CL_HomePage,
+    CL_MenuLateral,
+    CL_OptnAbout,
+    CL_IdentificarItens_ParaCarrinho_01,
+    CL_AddItens_carrinho_01,
+    CL_IdentificarItens_ParaCarrinho_02,
+    CL_AddItens_carrinho_02,
+    CL_AcessarCarrinho,
+)
+from Pages.carrinho_page import (
+    CL_IdentificarItens_carrinho_01,
+    CL_RemoverItem_carrinho_01,
+)
+from Pages.about_page import (
+    CL_VerificarPopUp,
+    CL_FecharPopUp
+)
 
 from conftest import browser
 import pytest
