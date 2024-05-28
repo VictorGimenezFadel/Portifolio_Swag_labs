@@ -37,8 +37,8 @@ class CL_OptnAbout(BasePage): # interação com a opção About (Sobre)
 
 
 
-# 2° acesso a Página Home
-class CL_IdentificarItens_ParaCarrinho(BasePage):
+# 2° acesso a Página Home - ADD itens ao carrinho
+class CL_IdentificarItens_ParaCarrinho_01(BasePage):# 01 = 1° Identificação de itens para o carrinho
     def __init__(self, browser):
         super().__init__(browser)
         self.btn_add_item_backpack = (By.ID, "add-to-cart-sauce-labs-backpack")
@@ -47,11 +47,39 @@ class CL_IdentificarItens_ParaCarrinho(BasePage):
 
 
 
-class CL_AddItens_carrinho(BasePage):
-    def add_item_carrinho(self,identificar_itens):
-        self.clicar(identificar_itens.btn_add_item_backpack)
-        self.clicar(identificar_itens.btn_add_item_bike_light)
-        self.clicar(identificar_itens.btn_add_item_onesie)
+class CL_AddItens_carrinho_01(BasePage): # 01 = 1° Primeira adição de itens ao carrinho
+    def add_item_carrinho_01(self,identificar_itens_01):
+        self.clicar(identificar_itens_01.btn_add_item_backpack)
+        self.clicar(identificar_itens_01.btn_add_item_bike_light)
+        self.clicar(identificar_itens_01.btn_add_item_onesie)
+
+
+
+# 1° Acesso ao carrinho
+class CL_AcessarCarrinho(BasePage):
+    def __init__(self, browser):
+        super().__init__(browser)
+        self.icone_carrinho = (By.CLASS_NAME, "shopping_cart_link")
+
+    def entrar_carrinho(self):
+        self.clicar(self.icone_carrinho)
+
+
+
+#
+# 3° acesso a Página Home - ADD itens ao carrinho
+class CL_IdentificarItens_ParaCarrinho_02(BasePage):# 02 = 2° Identificação de itens para o carrinho
+    def __init__(self, browser):
+        super().__init__(browser)
+        self.btn_add_item_fleece_jacket = (By.ID, "add-to-cart-sauce-labs-fleece-jacket")
+        self.btn_add_item_bolt_tshirt = (By.ID, "add-to-cart-sauce-labs-bolt-t-shirt")
+
+
+
+class CL_AddItens_carrinho_02(BasePage): # 02 = 2° Primeira adição de itens ao carrinho
+    def add_item_carrinho_02(self,identificar_itens_02):
+        self.clicar(identificar_itens_02.btn_add_item_fleece_jacket)
+        self.clicar(identificar_itens_02.btn_add_item_bolt_tshirt)
 
 
 
