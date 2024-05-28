@@ -89,9 +89,9 @@ class TestCT01_Swag_labs:
 
 
         #1° Remoção de itens do carrinho
-        identificar_itens = CL_IdentificarItens_carrinho(browser)  # Variavel para receber a class de identificação dos itens
-        remover_itens = CL_RemoverItem_carrinho(browser)  # Variavel para receber a class de remoção dos itens
-        remover_itens.remover_item_carrinho(identificar_itens)  # Aplicar Variavel para receber o método de remoção dos itens
+        identificar_itens_01 = CL_IdentificarItens_carrinho_01(browser)  # Variavel para receber a class de identificação dos itens
+        remover_itens = CL_RemoverItem_carrinho_01(browser)  # Variavel para receber a class de remoção dos itens
+        remover_itens.remover_item_carrinho_01(identificar_itens_01)  # Aplicar Variavel para receber o método de remoção dos itens
         remover_itens.voltar_pag_anterior() # Pega a ultima variável e aplica o método de voltar ou avançar para a página anterior
 
 
