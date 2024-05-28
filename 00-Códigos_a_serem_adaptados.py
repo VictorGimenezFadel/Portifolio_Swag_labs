@@ -1,17 +1,4 @@
-        #Entrar no carrinho
-        entrar_carrinho = browser.find_element(By.CLASS_NAME, "shopping_cart_link")
-        entrar_carrinho.click()
-
-
-
-        #Rolar toda para baixo
-        browser.execute_script("window.scrollBy(0, 500);")
-        WebDriverWait(browser, 30).until(
-            EC.element_to_be_clickable((By.ID, "checkout"))) #Espera até que o elemento desejado seja visível na página
-
-
-
-        #Realizar checkout
+ #Realizar checkout
         btn_checkout = browser.find_element(By.ID, "checkout")
         btn_checkout.click()
 
