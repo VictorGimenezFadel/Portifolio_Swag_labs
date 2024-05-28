@@ -83,7 +83,7 @@ class CL_AddItens_carrinho_02(BasePage): # 02 = 2° Primeira adição de itens a
 
 
 
-# 1° Acesso ao carrinho
+# 2° Acesso ao carrinho
 class CL_AcessarCarrinho(BasePage):
     def __init__(self, browser):
         super().__init__(browser)
