@@ -1,0 +1,14 @@
+SeleniumCurso/
+├── Empresa01_Exemplo/
+│   ├── Pages/
+│   │   ├── __init__.py
+│   │   ├── login_page.py
+│   │   ├── home_page.py
+│   │   └── carrinho_page.py
+│   ├── Testes/
+│   │   ├── __init__.py
+│   │   ├── test_ct01_login_valido.py
+│   │   ├── test_ct02_login_invalido.py
+│   │   ├──conftest.py
+│        └── test_ct03_add_itens.py
+└── pytest.ini
