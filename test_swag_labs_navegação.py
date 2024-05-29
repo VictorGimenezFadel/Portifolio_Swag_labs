@@ -7,7 +7,10 @@ Esse teste está em desenvolvimento
 # Import dos arquivos .py e das classes presentes dentro deles
 from conftest import browser
 import pytest
-from Pages.login_page import CL_LoginPage
+from Pages.login_page import (
+    CL_LoginValido,
+    CL_LoginInvalido,
+)
 from Pages.home_page import (
     CL_HomePage,
     CL_MenuLateral,
@@ -27,18 +30,26 @@ from Pages.about_page import (
     CL_FecharPopUp
 )
 
-from conftest import browser
-import pytest
-
 
 @pytest.mark.usefixtures("browser")
 @pytest.mark.navegar # mark para executar o teste através do pytest
+
+
 class TestCT01_Swag_labs:
     def test_ct01_swaglabs_navegação(self, browser):
 
-        # Primeiro Login
-        login_page = CL_LoginPage(browser)
-        login_page.fazer_login("standard_user", "secret_sauce")
+        # Tela de login
+
+        # Primeiro Login - Inválido
+        login_invalido = CL_LoginInvalido(browser)
+        login_invalido.fazer_login_invalido("standard_user", "senha_errada")
+        login_invalido.verificar_mensagem_de_erro_login()
+
+
+
+        # Primeiro Login - Válido
+        login_valido = CL_LoginValido(browser)
+        login_valido.fazer_login("standard_user", "secret_sauce")
 
 
 
