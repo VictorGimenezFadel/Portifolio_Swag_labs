@@ -34,6 +34,10 @@ class BasePage:
         assert self.encontrar_elementos(locator).is_displayed(), f"Os elementos '{locator}' não aparecem na tela no tempo esperado"
 
 
+    def recarregar_pagina(self):
+        self.browser.refresh()
+
+
     def voltar_pag_anterior(self):
         self.browser.back()
 
