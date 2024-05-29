@@ -27,7 +27,7 @@ class CL_LoginInvalido(BasePage):
 
 
     def verificar_mensagem_de_erro_login(self):
-        self.verificar_se_elemento_existe(self.verificar_mensagem_de_erro_login)
+        self.verificar_se_elemento_existe(self.mensagem_erro_login_invalido)
 
 
 
