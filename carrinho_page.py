@@ -19,3 +19,17 @@ class CL_RemoverItem_carrinho_01(BasePage): # 01 = 1° Remoção de itens dentro
     def remover_item_carrinho_01(self,remover_item):
         self.clicar(remover_item.btn_remover_item_bike_light)
         self.clicar(remover_item.btn_remover_item_onesie)
+        
+
+
+class CL_IdentificarBtn_checkout(BasePage):
+    def __init__(self, browser):
+        super().__init__(browser)
+        self.btn_checkout = (By.ID, "checkout")
+
+
+
+class CL_RealizarCheckout(BasePage):
+    def realizar_checkout_carrinho(self, realizar_checkout):
+    self.clicar(realizar_checkout.btn_checkout)
+    
