@@ -44,6 +44,7 @@ class TestCT01_Swag_labs:
         login_invalido = CL_LoginInvalido(browser)
         login_invalido.fazer_login_invalido("standard_user", "senha_errada")
         login_invalido.verificar_mensagem_de_erro_login()
+        login_invalido.recarregar_pagina()
 
 
 
