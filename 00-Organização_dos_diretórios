@@ -8,5 +8,5 @@ SwagLabs/
 │   └── login_page.py
 ├── Teste/
 │   ├── __init__.py
-│   └── test_SwagLabs_navegação.py
+│   └── test_SwagLabs_navegar.py
 └── conftest.py
