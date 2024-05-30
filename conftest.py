@@ -8,8 +8,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 @pytest.fixture
 def browser():
-
-    #Setup
+    # Setup
     browser = webdriver.Edge()
     browser.maximize_window()
     browser.get("https://www.saucedemo.com/")
@@ -17,6 +16,5 @@ def browser():
 
     yield browser
 
-    #Teardown
+    # Teardown
     browser.quit()
-    
