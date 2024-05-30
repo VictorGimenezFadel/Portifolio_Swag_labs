@@ -2,7 +2,7 @@
 Interações / Configurações da página de Login
 """
 from selenium.webdriver.common.by import By
-from base_page import BasePage
+from Pages.base_page import BasePage
 
 
 class CL_LoginInvalido(BasePage):
