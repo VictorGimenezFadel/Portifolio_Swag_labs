@@ -1,8 +1,8 @@
 """"
 Interações / Configurações da página Home
 """""
-from base_page import BasePage
-from Testes.conftest import browser
+from Pages.base_page import BasePage
+from conftest import browser
 from selenium.webdriver.common.by import By
 
 
