@@ -6,7 +6,7 @@ SeleniumCurso/
 │   ├── carrinho_page.py
 │   ├── home_page.py
 │   └── login_page.py
-├── Testes/
+├── Teste/
 │   ├── __init__.py
 │   └── test_SwagLabs_navegação.py
 └── conftest.py
