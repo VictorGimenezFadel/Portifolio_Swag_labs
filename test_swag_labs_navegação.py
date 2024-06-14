@@ -15,10 +15,10 @@ from Pages.home_page import (
     CL_HomePage,
     CL_MenuLateral,
     CL_OptnAbout,
-    CL_IdentificarItens_ParaCarrinho_01,
-    CL_AddItens_carrinho_01,
-    CL_IdentificarItens_ParaCarrinho_02,
-    CL_AddItens_carrinho_02,
+    CL_IdentificarItens_ParaCarrinho_Ident01,
+    CL_AddItens_carrinho_Add01,
+    CL_IdentificarItens_ParaCarrinho_Ident02,
+    CL_AddItens_carrinho_Add02,
     CL_AcessarCarrinho,
 )
 from Pages.carrinho_page import (
@@ -88,8 +88,8 @@ class TestCT01_Swag_labs:
 
 
         # 1° Adição de itens ao carrinho - Página Home
-        identificar_itens_01 = CL_IdentificarItens_ParaCarrinho_01(browser) # Variavel para receber a class de identificação dos itens
-        adicionar_itens_01 = CL_AddItens_carrinho_01(browser) # Variavel para receber a class de adicionar os itens
+        identificar_itens_01 = CL_IdentificarItens_ParaCarrinho_Ident01(browser) # Variavel para receber a class de identificação dos itens
+        adicionar_itens_01 = CL_AddItens_carrinho_Add01(browser) # Variavel para receber a class de adicionar os itens
         adicionar_itens_01.add_item_carrinho_01(identificar_itens_01) # Aplicar Variavel para receber o método de adição dos itens
 
 
@@ -109,8 +109,8 @@ class TestCT01_Swag_labs:
 
 
         # 2° Adição de itens ao carrinho - Página Home
-        identificar_itens_02 = CL_IdentificarItens_ParaCarrinho_02(browser) # Variavel para receber a class de identificação dos itens
-        adicionar_itens_02 = CL_AddItens_carrinho_02(browser) # Variavel para receber a class de adicionar os itens
+        identificar_itens_02 = CL_IdentificarItens_ParaCarrinho_Ident02(browser) # Variavel para receber a class de identificação dos itens
+        adicionar_itens_02 = CL_AddItens_carrinho_Add02(browser) # Variavel para receber a class de adicionar os itens
         adicionar_itens_02.add_item_carrinho_02(identificar_itens_02)
 
 
