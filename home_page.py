@@ -1,4 +1,3 @@
-
 """"
 Interações / Configurações da página Home
 """""
@@ -39,7 +38,7 @@ class CL_OptnAbout(BasePage): # interação com a opção About (Sobre)
 
 
 # 2° acesso a Página Home - ADD itens ao carrinho
-class CL_IdentificarItens_ParaCarrinho_01(BasePage):# 01 = 1° Identificação de itens para o carrinho
+class CL_IdentificarItens_ParaCarrinho_Ident01(BasePage):# 01 = 1° Identificação de itens para o carrinho
     def __init__(self, browser):
         super().__init__(browser)
         self.btn_add_item_backpack = (By.ID, "add-to-cart-sauce-labs-backpack")
@@ -48,7 +47,7 @@ class CL_IdentificarItens_ParaCarrinho_01(BasePage):# 01 = 1° Identificação d
 
 
 
-class CL_AddItens_carrinho_01(BasePage): # 01 = 1° Primeira adição de itens ao carrinho
+class CL_AddItens_carrinho_Add01(BasePage): # 01 = 1° Primeira adição de itens ao carrinho
     def add_item_carrinho_01(self,identificar_itens_01):
         self.clicar(identificar_itens_01.btn_add_item_backpack)
         self.clicar(identificar_itens_01.btn_add_item_bike_light)
@@ -69,7 +68,7 @@ class CL_AcessarCarrinho(BasePage):
 
 #
 # 3° acesso a Página Home - ADD itens ao carrinho
-class CL_IdentificarItens_ParaCarrinho_02(BasePage):# 02 = 2° Identificação de itens para o carrinho
+class CL_IdentificarItens_ParaCarrinho_Ident02(BasePage):# Int02 = 2° Identificação de itens para o carrinho
     def __init__(self, browser):
         super().__init__(browser)
         self.btn_add_item_fleece_jacket = (By.ID, "add-to-cart-sauce-labs-fleece-jacket")
@@ -77,7 +76,7 @@ class CL_IdentificarItens_ParaCarrinho_02(BasePage):# 02 = 2° Identificação d
 
 
 
-class CL_AddItens_carrinho_02(BasePage): # 02 = 2° Primeira adição de itens ao carrinho
+class CL_AddItens_carrinho_Add02(BasePage): # 02 = 2° Primeira adição de itens ao carrinho
     def add_item_carrinho_02(self,identificar_itens_02):
         self.clicar(identificar_itens_02.btn_add_item_fleece_jacket)
         self.clicar(identificar_itens_02.btn_add_item_bolt_tshirt)
