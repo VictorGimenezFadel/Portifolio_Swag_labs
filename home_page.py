@@ -48,10 +48,10 @@ class CL_IdentificarItens_ParaCarrinho_Ident01(BasePage):# 01 = 1° Identificaç
 
 
 class CL_AddItens_carrinho_Add01(BasePage): # 01 = 1° Primeira adição de itens ao carrinho
-    def add_item_carrinho_01(self,identificar_itens_01):
-        self.clicar(identificar_itens_01.btn_add_item_backpack)
-        self.clicar(identificar_itens_01.btn_add_item_bike_light)
-        self.clicar(identificar_itens_01.btn_add_item_onesie)
+    def adicionar_itens_carrinho_01(self,add_item_int01):
+        self.clicar(add_item_int01.btn_add_item_backpack)
+        self.clicar(add_item_int01.btn_add_item_bike_light)
+        self.clicar(add_item_int01.btn_add_item_onesie)
 
 
 
@@ -77,9 +77,10 @@ class CL_IdentificarItens_ParaCarrinho_Ident02(BasePage):# Int02 = 2° Identific
 
 
 class CL_AddItens_carrinho_Add02(BasePage): # 02 = 2° Primeira adição de itens ao carrinho
-    def add_item_carrinho_02(self,identificar_itens_02):
-        self.clicar(identificar_itens_02.btn_add_item_fleece_jacket)
-        self.clicar(identificar_itens_02.btn_add_item_bolt_tshirt)
+
+    def adicionar_itens_carrinho_02(self,add_item_int02):
+        self.clicar(add_item_int02.btn_add_item_fleece_jacket)
+        self.clicar(add_item_int02.btn_add_item_bolt_tshirt)
 
 
 
