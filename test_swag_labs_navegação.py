@@ -3,6 +3,7 @@ Navegação básica no site Swag Labs
 
 Esse teste está em desenvolvimento
 """
+import time
 
 # Import dos arquivos .py e das classes presentes dentro deles
 from conftest import browser
@@ -90,7 +91,7 @@ class TestCT01_Swag_labs:
         # 1° Adição de itens ao carrinho - Página Home
         identificar_itens_01 = CL_IdentificarItens_ParaCarrinho_Ident01(browser) # Variavel para receber a class de identificação dos itens
         adicionar_itens_01 = CL_AddItens_carrinho_Add01(browser) # Variavel para receber a class de adicionar os itens
-        adicionar_itens_01.add_item_carrinho_01(identificar_itens_01) # Aplicar Variavel para receber o método de adição dos itens
+        adicionar_itens_01.adicionar_itens_carrinho_01(identificar_itens_01) # Aplicar Variavel para receber o método de adição dos itens
 
 
 
@@ -111,7 +112,7 @@ class TestCT01_Swag_labs:
         # 2° Adição de itens ao carrinho - Página Home
         identificar_itens_02 = CL_IdentificarItens_ParaCarrinho_Ident02(browser) # Variavel para receber a class de identificação dos itens
         adicionar_itens_02 = CL_AddItens_carrinho_Add02(browser) # Variavel para receber a class de adicionar os itens
-        adicionar_itens_02.add_item_carrinho_02(identificar_itens_02)
+        adicionar_itens_02.adicionar_itens_carrinho_02(identificar_itens_02)
 
 
 
