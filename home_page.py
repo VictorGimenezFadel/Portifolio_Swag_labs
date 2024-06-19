@@ -84,3 +84,4 @@ class CL_AcessarCarrinho(BasePage):
 
     def entrar_carrinho(self):
         self.clicar(self.icone_carrinho)
+        
