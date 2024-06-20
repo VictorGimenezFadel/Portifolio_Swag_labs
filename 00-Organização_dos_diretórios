@@ -1,4 +1,8 @@
 SwagLabs/
+├── GlobalFeatures/
+│   ├── __init__.py
+│   ├── conftest.py
+│   ├── verificar_elementos.py
 ├── Pages/
 │   ├── __init__.py
 │   ├── about_page.py
@@ -6,7 +10,7 @@ SwagLabs/
 │   ├── carrinho_page.py
 │   ├── home_page.py
 │   └── login_page.py
-├── Teste/
-│   ├── __init__.py
-│   └── test_SwagLabs_navegar.py
-└── conftest.py
+└── Teste/
+    ├── __init__.py
+    └── test_SwagLabs_navegar.py
+
