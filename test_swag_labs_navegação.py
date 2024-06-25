@@ -3,33 +3,35 @@ Navegação básica no site Swag Labs
 
 Esse teste está em desenvolvimento
 """
-import time
-
 # Import dos arquivos .py e das classes presentes dentro deles
-from conftest import browser
 import pytest
-from Pages.login_page import (
+from conftest import browser
+from verificar_elementos import (
+    Cl_VerificarElementos_ItensCarrinho_Verif01
+)
+from login_page import (
     CL_LoginValido,
     CL_LoginInvalido,
 )
-from Pages.home_page import (
+from home_page import (
     CL_HomePage,
     CL_MenuLateral,
     CL_OptnAbout,
-    CL_IdentificarItens_ParaCarrinho_Ident01,
+    #CL_IdentificarItens_ParaCarrinho_Ident01,
     CL_AddItens_carrinho_Add01,
     CL_IdentificarItens_ParaCarrinho_Ident02,
     CL_AddItens_carrinho_Add02,
     CL_AcessarCarrinho,
 )
-from Pages.carrinho_page import (
-    CL_IdentificarItens_carrinho_01,
+from carrinho_page import (
+    CL_IdentificarBtn_RemoverCarrinho_01,
     CL_RemoverItem_carrinho_01,
 )
-from Pages.about_page import (
+from about_page import (
     CL_VerificarPopUp,
     CL_FecharPopUp
 )
+
 
 
 @pytest.mark.usefixtures("browser")
@@ -101,8 +103,14 @@ class TestCT01_Swag_labs:
 
 
 
-        #1° Remoção de itens do carrinho
-        identificar_itens_01 = CL_IdentificarItens_carrinho_01(browser)  # Variavel para receber a class de identificação dos itens
+        # 1° Primeira verificação de itns do carrinho - Carrinho
+
+        assert resultado_verificacao_01, "Elementos do carrinho não estão presentes!" #Essa menssagem irá aparecer caso o testde falhar
+
+
+
+        #1° Remoção de itens do carrinho - Carrinho
+        identificar_itens_01 = CL_IdentificarBtn_RemoverCarrinho_01(browser)  # Variavel para receber a class de identificação dos itens
         remover_itens = CL_RemoverItem_carrinho_01(browser)  # Variavel para receber a class de remoção dos itens
         remover_itens.remover_item_carrinho_01(identificar_itens_01)  # Aplicar Variavel para receber o método de remoção dos itens
         remover_itens.voltar_pag_anterior() # Pega a ultima variável e aplica o método de voltar ou avançar para a página anterior
