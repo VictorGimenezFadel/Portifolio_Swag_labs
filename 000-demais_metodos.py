@@ -1,5 +1,5 @@
 """
-Essa arquivo serve para criar métodos de verificação dos elementos, criar o assert e aplicar no arquivo principal
+Essa arquivo serve para métodos alternativos para uma mesma funcionalidade
 """
 from selenium.webdriver.common.by import By
 from base_page import BasePage
