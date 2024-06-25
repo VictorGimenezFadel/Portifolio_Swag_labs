@@ -2,7 +2,7 @@ SwagLabs/
 ├── GlobalFeatures/
 │   ├── __init__.py
 │   ├── conftest.py
-│   ├── verificar_elementos.py
+│   └── verificar_elementos.py
 ├── Pages/
 │   ├── __init__.py
 │   ├── about_page.py
