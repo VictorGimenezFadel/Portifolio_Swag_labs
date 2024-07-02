@@ -1,10 +1,21 @@
 """
-Essa page serve para criar métodos de verificação e aplicar no arquivo principal
+Essa arquivo serve para criar métodos de verificação dos elementos, criar o assert e aplicar no arquivo principal
 """
 from selenium.webdriver.common.by import By
-from Pages.base_page import BasePage
+from base_page import BasePage
 
 
+class Cl_VerificarElementos_ItensCarrinho(BasePage):
+    def __init__(self, browser):
+        super().__init__(browser)
+        self.item_verificar = (By.XPATH, "//*[@class='inventory_item_name' and text()='{}']")
+
+    def verificar_itens_presentes(self, nome_item):
+        item = (self.item_verificar[0], self.item_verificar[1].format(nome_item))
+        self.verificar_se_elemento_existe(item)
+        assert self.browser.find_element(*item_locator).is_displayed()
+
+"""
 class Cl_VerificarElementos_ItensCarrinho(BasePage):
     def __init__(self, browser):
         super().__init__(browser)
@@ -19,4 +30,4 @@ class Cl_VerificarElementos_ItensCarrinho(BasePage):
             (By.ID, "add-to-cart-sauce-labs-onesie"),
         ]:
             assert self.browser.find_element(*item_locator).is_displayed()
-          
+"""          
