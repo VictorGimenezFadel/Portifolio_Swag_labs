@@ -6,30 +6,32 @@ Esse teste está em desenvolvimento
 # Import dos arquivos .py e das classes presentes dentro deles
 import pytest
 from conftest import browser
-from verificar_elementos import (
-    Cl_VerificarElementos_ItensCarrinho_Verif01
+from about_page import (
+    CL_VerificarPopUp,
+    CL_FecharPopUp
 )
-from login_page import (
-    CL_LoginValido,
-    CL_LoginInvalido,
+from carrinho_page import (
+    CL_RemoverItens_Carrinho,
+    CL_ContinueShopping,
+    # CL_IdentificarBtn_RemoverCarrinho_01,
+    # CL_RemoverItem_carrinho_01,
 )
 from home_page import (
     CL_HomePage,
     CL_MenuLateral,
     CL_OptnAbout,
-    #CL_IdentificarItens_ParaCarrinho_Ident01,
-    CL_AddItens_carrinho_Add01,
-    CL_IdentificarItens_ParaCarrinho_Ident02,
-    CL_AddItens_carrinho_Add02,
+    CL_AdicionarItens_Carrinho,
     CL_AcessarCarrinho,
 )
-from carrinho_page import (
-    CL_IdentificarBtn_RemoverCarrinho_01,
-    CL_RemoverItem_carrinho_01,
+from infos_produtos_page import (
+    CL_VoltarPara_Produtos,
 )
-from about_page import (
-    CL_VerificarPopUp,
-    CL_FecharPopUp
+from login_page import (
+    CL_LoginValido,
+    CL_LoginInvalido,
+)
+from verificar_elementos import (
+    Cl_VerificarElementos_ItensCarrinho
 )
 
 
@@ -91,10 +93,17 @@ class TestCT01_Swag_labs:
 
 
         # 1° Adição de itens ao carrinho - Página Home
-        identificar_itens_01 = CL_IdentificarItens_ParaCarrinho_Ident01(browser) # Variavel para receber a class de identificação dos itens
-        adicionar_itens_01 = CL_AddItens_carrinho_Add01(browser) # Variavel para receber a class de adicionar os itens
-        adicionar_itens_01.adicionar_itens_carrinho_01(identificar_itens_01) # Aplicar Variavel para receber o método de adição dos itens
+        adicionar_itens_carrinho = CL_AdicionarItens_Carrinho(browser)
+        voltar_produtos = CL_VoltarPara_Produtos(browser)
 
+        adicionar_itens_carrinho.add_ao_carrinho("Sauce Labs Backpack")
+        voltar_produtos.voltar_para_produtos()
+
+        adicionar_itens_carrinho.add_ao_carrinho("Sauce Labs Bike Light")
+        voltar_produtos.voltar_para_produtos()
+
+        adicionar_itens_carrinho.add_ao_carrinho("Sauce Labs Onesie")
+        voltar_produtos.voltar_para_produtos()
 
 
         # 1° Acesso ao carrinho - Página Home
@@ -110,18 +119,24 @@ class TestCT01_Swag_labs:
 
 
         #1° Remoção de itens do carrinho - Carrinho
-        identificar_itens_01 = CL_IdentificarBtn_RemoverCarrinho_01(browser)  # Variavel para receber a class de identificação dos itens
-        remover_itens = CL_RemoverItem_carrinho_01(browser)  # Variavel para receber a class de remoção dos itens
-        remover_itens.remover_item_carrinho_01(identificar_itens_01)  # Aplicar Variavel para receber o método de remoção dos itens
-        remover_itens.voltar_pag_anterior() # Pega a ultima variável e aplica o método de voltar ou avançar para a página anterior
+        remover_item = CL_RemoverItens_Carrinho(browser)
+        continue_shopping = CL_ContinueShopping(browser)
 
+        remover_item.remover_item_carrinho("Sauce Labs Bike Light")
+        remover_item.voltar_pag_anterior()
+
+        remover_item.remover_item_carrinho("Sauce Labs Onesie")
+        remover_item.voltar_pag_anterior()
+        continue_shopping.continue_shopping_carrinho()
 
 
         # 2° Adição de itens ao carrinho - Página Home
-        identificar_itens_02 = CL_IdentificarItens_ParaCarrinho_Ident02(browser) # Variavel para receber a class de identificação dos itens
-        adicionar_itens_02 = CL_AddItens_carrinho_Add02(browser) # Variavel para receber a class de adicionar os itens
-        adicionar_itens_02.adicionar_itens_carrinho_02(identificar_itens_02)
 
+        adicionar_itens_carrinho.add_ao_carrinho("Sauce Labs Fleece Jacket")
+        adicionar_itens_carrinho.voltar_pag_anterior()
+
+        adicionar_itens_carrinho.add_ao_carrinho("Sauce Labs Bolt T-Shirt")
+        voltar_produtos.voltar_para_produtos()
 
 
         # 2° Acesso ao carrinho - Página Home
