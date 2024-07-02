@@ -6,17 +6,17 @@ from conftest import browser
 from selenium.webdriver.common.by import By
 
 
-# 1° acesso a Página Home
+# Verificar login bem sucedido
 class CL_HomePage(BasePage):
     def __init__(self, browser):
         super().__init__(browser)
         self.titulo_pagina = (By.XPATH, "//span[@class='title']")
 
     def verificar_login_bem_sucedido(self):
-        self.verificar_se_elemento_existe(
-            self.titulo_pagina)  # Verificar se o teste acessou a página inicial (Verifica o elemento do titulo da Home Page)
+        self.verificar_se_elemento_existe(self.titulo_pagina)  # Verificar se o teste acessou a página inicial (Verifica o elemento do titulo da Home Page)
 
 
+# Acessar menu lateral - Canto superior esquerdo
 class CL_MenuLateral(BasePage):  # interação com o Menu lateral (3 risquinhos)
     def __init__(self, browser):
         super().__init__(browser)
@@ -26,6 +26,7 @@ class CL_MenuLateral(BasePage):  # interação com o Menu lateral (3 risquinhos)
         self.clicar(self.menu_lateral_esq)
 
 
+# Acessar opção About
 class CL_OptnAbout(BasePage):  # interação com a opção About (Sobre)
     def __init__(self, browser):
         super().__init__(browser)
@@ -35,23 +36,20 @@ class CL_OptnAbout(BasePage):  # interação com a opção About (Sobre)
         self.clicar(self.optn_about)
 
 
-# 2° acesso a Página Home - ADD itens ao carrinho
-class CL_IdentificarItens_ParaCarrinho_Ident01(BasePage):  # 01 = 1° Identificação de itens para o carrinho
+# Adicionar itens ao carrinho
+class CL_AdicionarItens_Carrinho(BasePage):  # 01 = 1° Identificação de itens para o carrinho
     def __init__(self, browser):
         super().__init__(browser)
-        self.btn_add_item_backpack = (By.ID, "add-to-cart-sauce-labs-backpack")
-        self.btn_add_item_bike_light = (By.ID, "add-to-cart-sauce-labs-bike-light")
-        self.btn_add_item_onesie = (By.ID, "add-to-cart-sauce-labs-onesie")
+        self.item_inventario = (By.XPATH, "//*[@class='inventory_item_name ' and text()='{}']")
+        self.btn_adicionar_carrinho = (By.ID, "add-to-cart")
+
+    def add_ao_carrinho(self,nome_item):
+        item = (self.item_inventario[0], self.item_inventario[1].format(nome_item))
+        self.clicar(item)
+        self.clicar(self.btn_adicionar_carrinho)
 
 
-class CL_AddItens_carrinho_Add01(BasePage):  # 01 = 1° Primeira adição de itens ao carrinho
-    def adicionar_itens_carrinho_01(self, add_item):
-        self.clicar(add_item.btn_add_item_backpack)
-        self.clicar(add_item.btn_add_item_bike_light)
-        self.clicar(add_item.btn_add_item_onesie)
-
-
-# 1° Acesso ao carrinho
+# Acessar o carrinho
 class CL_AcessarCarrinho(BasePage):
     def __init__(self, browser):
         super().__init__(browser)
@@ -59,29 +57,3 @@ class CL_AcessarCarrinho(BasePage):
 
     def entrar_carrinho(self):
         self.clicar(self.icone_carrinho)
-
-
-#
-# 3° acesso a Página Home - ADD itens ao carrinho
-class CL_IdentificarItens_ParaCarrinho_Ident02(BasePage):  # Int02 = 2° Identificação de itens para o carrinho
-    def __init__(self, browser):
-        super().__init__(browser)
-        self.btn_add_item_fleece_jacket = (By.ID, "add-to-cart-sauce-labs-fleece-jacket")
-        self.btn_add_item_bolt_tshirt = (By.ID, "add-to-cart-sauce-labs-bolt-t-shirt")
-
-
-class CL_AddItens_carrinho_Add02(BasePage):  # 02 = 2° Segunda adição de itens ao carrinho
-    def adicionar_itens_carrinho_02(self, add_item):
-        self.clicar(add_item.btn_add_item_fleece_jacket)
-        self.clicar(add_item.btn_add_item_bolt_tshirt)
-
-
-# 2° Acesso ao carrinho
-class CL_AcessarCarrinho(BasePage):
-    def __init__(self, browser):
-        super().__init__(browser)
-        self.icone_carrinho = (By.CLASS_NAME, "shopping_cart_link")
-
-    def entrar_carrinho(self):
-        self.clicar(self.icone_carrinho)
-        
