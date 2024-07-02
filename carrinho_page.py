@@ -1,31 +1,36 @@
 """"
 Interações / Configurações da página Carrinho
 """""
-from Pages.base_page import BasePage
+from base_page import BasePage
 from conftest import browser
 from selenium.webdriver.common.by import By
 
 
-# 1° acesso a Página Carrinho
-class CL_IdentificarItens_carrinho_01(BasePage):  # 01 = 1° Identificação de itens dentro do carrinho
+class CL_RemoverItens_Carrinho(BasePage):  # 01 = 1° Identificação de itens para o carrinho
     def __init__(self, browser):
         super().__init__(browser)
-        self.btn_remover_item_bike_light = (By.ID, "remove-sauce-labs-backpack")
-        self.btn_remover_item_onesie = (By.ID, "remove-sauce-labs-onesie")
+        self.item_carrinho = (By.XPATH, "//*[@class='inventory_item_name' and text()='{}']")
+        self.btn_remover_carrinho = (By.ID, "remove")
+
+    def remover_item_carrinho(self, nome_item):
+        item = (self.item_carrinho[0], self.item_carrinho[1].format(nome_item))
+        self.clicar(item)
+        self.clicar(self.btn_remover_carrinho)
 
 
-class CL_RemoverItem_carrinho_01(BasePage):  # 01 = 1° Remoção de itens dentro do carrinho
-    def remover_item_carrinho_01(self, remover_item):
-        self.clicar(remover_item.btn_remover_item_bike_light)
-        self.clicar(remover_item.btn_remover_item_onesie)
+class CL_ContinueShopping(BasePage):
+    def __init__(self, browser):
+        super().__init__(browser)
+        self.btn_continue_shopping = (By.ID, "continue-shopping")
+
+    def continue_shopping_carrinho(self):
+        self.clicar(self.btn_continue_shopping)
 
 
-class CL_IdentificarBtn_checkout(BasePage):
+class CL_RealizarCheckout(BasePage):
     def __init__(self, browser):
         super().__init__(browser)
         self.btn_checkout = (By.ID, "checkout")
 
-
-class CL_RealizarCheckout(BasePage):
     def realizar_checkout_carrinho(self, realizar_checkout):
         self.clicar(realizar_checkout.btn_checkout)
