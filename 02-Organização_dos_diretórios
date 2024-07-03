@@ -1,14 +1,16 @@
 SwagLabs/
 ├── GlobalFeatures/
 │   ├── __init__.py
+│   ├── base_page.py
 │   ├── conftest.py
 │   └── verificar_elementos.py
 ├── Pages/
 │   ├── __init__.py
 │   ├── about_page.py
-│   ├── base_page.py
 │   ├── carrinho_page.py
+│   ├── checkout_page.py
 │   ├── home_page.py
+│   ├── infos_produtos_page.py
 │   └── login_page.py
 └── Teste/
     ├── __init__.py
