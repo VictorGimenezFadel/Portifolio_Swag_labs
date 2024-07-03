@@ -13,8 +13,13 @@ from about_page import (
 from carrinho_page import (
     CL_RemoverItens_Carrinho,
     CL_ContinueShopping,
-    # CL_IdentificarBtn_RemoverCarrinho_01,
-    # CL_RemoverItem_carrinho_01,
+    CL_RealizarCheckout,
+)
+from checkout_page import (
+    CL_InfosCheckout,
+    CL_ContinueCheckout,
+    CL_FinalizarCheckout,
+    CL_Voltar_PagInicial,
 )
 from home_page import (
     CL_HomePage,
@@ -48,6 +53,7 @@ class TestCT01_Swag_labs:
         # Primeiro Login - Inválido
         login_invalido = CL_LoginInvalido(browser)
         login_invalido.fazer_login_invalido("standard_user", "senha_errada")
+
         login_invalido.verificar_mensagem_de_erro_login()
         login_invalido.recarregar_pagina()
 
@@ -106,15 +112,10 @@ class TestCT01_Swag_labs:
         voltar_produtos.voltar_para_produtos()
 
 
+
         # 1° Acesso ao carrinho - Página Home
-        carrinho = CL_AcessarCarrinho(browser)
-        carrinho.entrar_carrinho()
-
-
-
-        # 1° Primeira verificação de itns do carrinho - Carrinho
-
-        assert resultado_verificacao_01, "Elementos do carrinho não estão presentes!" #Essa menssagem irá aparecer caso o testde falhar
+        acessar_carrinho = CL_AcessarCarrinho(browser)
+        acessar_carrinho.entrar_carrinho()
 
 
 
@@ -130,8 +131,8 @@ class TestCT01_Swag_labs:
         continue_shopping.continue_shopping_carrinho()
 
 
-        # 2° Adição de itens ao carrinho - Página Home
 
+        # 2° Adição de itens ao carrinho - Página Home
         adicionar_itens_carrinho.add_ao_carrinho("Sauce Labs Fleece Jacket")
         adicionar_itens_carrinho.voltar_pag_anterior()
 
@@ -139,6 +140,35 @@ class TestCT01_Swag_labs:
         voltar_produtos.voltar_para_produtos()
 
 
+
         # 2° Acesso ao carrinho - Página Home
         carrinho = CL_AcessarCarrinho(browser)
         carrinho.entrar_carrinho()
+
+
+
+        # 1° Verificação de itns do carrinho - Carrinho
+        verificar_produto = Cl_VerificarElementos_ItensCarrinho(browser)
+
+        verificar_produto.verificar_itens_presentes("Sauce Labs Backpack")
+        verificar_produto.verificar_itens_presentes("Sauce Labs Fleece Jacket")
+        verificar_produto.verificar_itens_presentes("Sauce Labs Bolt T-Shirt")
+
+
+
+        # 1° Interação com o botão Checkout - Carrinho
+        realizar_checkout = CL_RealizarCheckout(browser)
+        realizar_checkout.realizar_checkout_carrinho()
+
+
+
+        # 1° Continue Checkout - Checkout
+        infos_checkout = CL_InfosCheckout(browser)
+        btn_continue_checkout = CL_ContinueCheckout(browser)
+        btn_finish_checkout = CL_FinalizarCheckout(browser)
+        btn_back_home = CL_Voltar_PagInicial(browser)
+
+        infos_checkout.inserir_infos("Victor", "Gimenez", "12345-678")
+        btn_continue_checkout.continuar_checkout()
+        btn_finish_checkout.finalizar_checkout()
+        btn_back_home.voltar_pagina_incial()
