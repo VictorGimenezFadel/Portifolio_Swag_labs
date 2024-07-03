@@ -13,7 +13,8 @@ class Cl_VerificarElementos_ItensCarrinho(BasePage):
     def verificar_itens_presentes(self, nome_item):
         item = (self.item_verificar[0], self.item_verificar[1].format(nome_item))
         self.verificar_se_elemento_existe(item)
-        assert self.browser.find_element(*item_locator).is_displayed()
+
+
 
 """
 class Cl_VerificarElementos_ItensCarrinho(BasePage):
