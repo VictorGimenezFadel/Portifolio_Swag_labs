@@ -6,6 +6,7 @@ from conftest import browser
 from selenium.webdriver.common.by import By
 
 
+
 class CL_RemoverItens_Carrinho(BasePage):  # 01 = 1° Identificação de itens para o carrinho
     def __init__(self, browser):
         super().__init__(browser)
@@ -18,6 +19,7 @@ class CL_RemoverItens_Carrinho(BasePage):  # 01 = 1° Identificação de itens p
         self.clicar(self.btn_remover_carrinho)
 
 
+
 class CL_ContinueShopping(BasePage):
     def __init__(self, browser):
         super().__init__(browser)
@@ -27,10 +29,11 @@ class CL_ContinueShopping(BasePage):
         self.clicar(self.btn_continue_shopping)
 
 
+
 class CL_RealizarCheckout(BasePage):
     def __init__(self, browser):
         super().__init__(browser)
         self.btn_checkout = (By.ID, "checkout")
 
-    def realizar_checkout_carrinho(self, realizar_checkout):
-        self.clicar(realizar_checkout.btn_checkout)
+    def realizar_checkout_carrinho(self):
+        self.clicar(self.btn_checkout)
