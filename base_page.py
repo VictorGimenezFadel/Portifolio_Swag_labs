@@ -3,6 +3,7 @@ Métodos reutilizáveis
 """
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver import ActionChains
 
 
 class BasePage():
@@ -20,20 +21,11 @@ class BasePage():
 
 
 
-    def escrever(self, locator, text):
-        self.encontrar_elemento(locator).send_keys(text)
-
-
-
-    def clicar(self, locator):
-        WebDriverWait(self.browser, 30).until(EC.element_to_be_clickable(locator)).click()
-
-
-
     def verificar_se_elemento_existe(self, locator):
         self.esperar_elemento_aparecer(locator)
         assert self.encontrar_elemento(locator).is_displayed(), f"O elemento '{locator}' não está presente"
                                                                 # Mensagem para caso o elemento não esteja presente
+
 
 
     def verificar_se_elementos_existem(self, locator): # Usar somente em situações pontuais onde aparecem varios elementos com um mesmo locator
@@ -62,6 +54,28 @@ class BasePage():
     def verificar_elemento_nao_existe(self, locator):
         assert len(self.encontrar_elementos(locator)) == 0, f"Elemento '{locator}' existe, mas é esperado que não exista"
                                                     # Essa mensagem irá aparecer quando a verificação der erro
+
+
+
+    def escrever(self, locator, text):
+        self.encontrar_elemento(locator).send_keys(text)
+
+
+
+    def clicar(self, locator):
+        WebDriverWait(self.browser, 30).until(EC.element_to_be_clickable(locator)).click()
+
+
+
+    def clique_duplo(self, locator):
+        elemento = self.esperar_elemento_aparecer(locator)
+        ActionChains(self.browser).double_click(elemento).perform()
+
+
+
+    def clique_btn_direito(self, locator):
+        elemento = self.esperar_elemento_aparecer(locator)
+        ActionChains(self.browser).context_click(elemento).perform()
 
 
 
