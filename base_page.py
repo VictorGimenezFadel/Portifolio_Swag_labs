@@ -3,7 +3,7 @@ Métodos reutilizáveis
 """
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver import ActionChains, Keys
+from selenium.webdriver import ActionChains
 
 
 class BasePage():
@@ -71,52 +71,6 @@ class BasePage():
     def clique_btn_direito(self, locator):
         elemento = self.esperar_elemento_aparecer(locator)
         ActionChains(self.browser).context_click(elemento).perform()
-
-
-
-    # Esse método é somete para ilustrar o que o método deve fazer, pois não apliquei no arquivo do teste
-    def pressionar_tecla_especifica(self, locator, key):
-        elemento = self.encontrar_elemento(locator)
-        if key == "ENTER":
-            elemento.send_keys(Keys.ENTER)
-        elif key == "ESPAÇO":
-            elemento.send_keys(Keys.SPACE)
-        elif key == "SHIFT":
-            elemento.send_keys(Keys.SHIFT)
-        elif key == "CTRL":
-            elemento.send_keys(Keys.CONTROL)
-        elif key == "LEFT_ALT":
-            elemento.send_keys(Keys.LEFT_ALT)
-
-
-
-    def pressionar_tecla_letra(self, locator, key):
-        elemento = self.encontrar_elemento(locator)
-        if key == "A":
-            elemento.send_keys("A")
-        elif key == "B":
-            elemento.send_keys("B")
-        elif key == "C":
-            elemento.send_keys("C")
-        elif key == "D":
-            elemento.send_keys("D")
-        elif key == "E":
-            elemento.send_keys("E")
-
-
-
-    def pressionar_tecla_numero(self, locator, key):
-        elemento = self.encontrar_elemento(locator)
-        if key == "1":
-            elemento.send_keys("1")
-        elif key == "2":
-            elemento.send_keys("2")
-        elif key == "3":
-            elemento.send_keys("3")
-        elif key == "4":
-            elemento.send_keys("4")
-        elif key == "5":
-            elemento.send_keys("5")
 
 
 
