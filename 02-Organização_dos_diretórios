@@ -15,5 +15,9 @@ SwagLabs/
 │   └── login_page.py
 └── Teste/
     ├── __init__.py
-    └── test_SwagLabs_navegar.py
+    ├── test_about.py
+    ├── test_carrinho.py
+    ├── test_checkout.py
+    ├── test_home.py
+    └── test_login.py
 
