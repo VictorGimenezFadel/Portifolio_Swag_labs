@@ -8,163 +8,135 @@ from conftest import browser
 from selenium.webdriver import Keys
 
 
-class CL_TeclasMapeadas(BasePage):
+class CL_TeclasMapeadas_Numpad(BasePage):
     def __init__(self, browser):
         self.browser = browser
 
-    
-
-    def pressionar_tecla_numeros(self, locator, tecla):
+    def pressionar_tecla_numpad(self, locator, tecla):
         elemento = self.encontrar_elemento(locator)
-        if tecla == "NUMBER0":
-            elemento.send_keys(Keys.NUMPAD0)
-        elif tecla == "NUMBER1":
-            elemento.send_keys(Keys.NUMPAD1)
-        elif tecla == "NUMBER2":
-            elemento.send_keys(Keys.NUMPAD2)
-        elif tecla == "NUMBER3":
-            elemento.send_keys(Keys.NUMPAD3)
-        elif tecla == "NUMBER4":
-            elemento.send_keys(Keys.NUMPAD4)
-        elif tecla == "NUMBER5":
-            elemento.send_keys(Keys.NUMPAD5)
-        elif tecla == "NUMBER6":
-            elemento.send_keys(Keys.NUMPAD6)
-        elif tecla == "NUMBER7":
-            elemento.send_keys(Keys.NUMPAD7)
-        elif tecla == "NUMBER8":
-            elemento.send_keys(Keys.NUMPAD8)
-        elif tecla == "NUMBER9":
-            elemento.send_keys(Keys.NUMPAD9)
-        elif tecla == "TECLA1":
-            elemento.send_keys("1")
-        elif tecla == "TECLA2":
-            elemento.send_keys("2")
-        elif tecla == "TECLA3":
-            elemento.send_keys("3")
-        elif tecla == "TECLA4":
-            elemento.send_keys("4")
-        elif tecla == "TECLA5":
-            elemento.send_keys("5")
-        elif tecla == "TECLA6":
-            elemento.send_keys("6")
-        elif tecla == "TECLA7":
-            elemento.send_keys("7")
-        elif tecla == "TECLA8":
-            elemento.send_keys("8")
-        elif tecla == "TECLA9":
-            elemento.send_keys("9")
-        elif tecla == "TECLA0":
-            elemento.send_keys("0")
+        teclas_mapa = {
+            "NUMBER0": Keys.NUMPAD0,
+            "NUMBER1": Keys.NUMPAD1,
+            "NUMBER2": Keys.NUMPAD2,
+            "NUMBER3": Keys.NUMPAD3,
+            "NUMBER4": Keys.NUMPAD4,
+            "NUMBER5": Keys.NUMPAD5,
+            "NUMBER6": Keys.NUMPAD6,
+            "NUMBER7": Keys.NUMPAD7,
+            "NUMBER8": Keys.NUMPAD8,
+            "NUMBER9": Keys.NUMPAD9
+        }
+        elemento.send_keys(teclas_mapa.get(tecla))
 
 
+
+class CL_TeclasMapeadas_Numerica(BasePage):
+    def __init__(self, browser):
+            self.browser = browser
+
+    def pressionar_tecla_numerica(self, locator, tecla):
+        elemento = self.encontrar_elemento(locator)
+        teclas_mapa = {
+            "TECLA1": "1",
+            "TECLA2": "2",
+            "TECLA3": "3",
+            "TECLA4": "4",
+            "TECLA5": "5",
+            "TECLA6": "6",
+            "TECLA7": "7",
+            "TECLA8": "8",
+            "TECLA9": "9",
+            "TECLA0": "0"
+        }
+        elemento.send_keys(teclas_mapa.get(tecla))
+
+
+
+class CL_TeclasMapeadas_Letra(BasePage):
+    def __init__(self, browser):
+        self.browser = browser
 
     def pressionar_tecla_letra(self, locator, tecla):
         elemento = self.encontrar_elemento(locator)
-        if tecla == "A":
-            elemento.send_keys("A")
-        elif tecla == "B":
-            elemento.send_keys("B")
-        elif tecla == "C":
-            elemento.send_keys("C")
-        elif tecla == "D":
-            elemento.send_keys("D")
-        elif tecla == "E":
-            elemento.send_keys("E")
-        elif tecla == "F":
-            elemento.send_keys("F")
-        elif tecla == "G":
-            elemento.send_keys("G")
-        elif tecla == "H":
-            elemento.send_keys("H")
-        elif tecla == "I":
-            elemento.send_keys("I")
-        elif tecla == "J":
-            elemento.send_keys("J")
-        elif tecla == "K":
-            elemento.send_keys("K")
-        elif tecla == "L":
-            elemento.send_keys("L")
-        elif tecla == "M":
-            elemento.send_keys("M")
-        elif tecla == "N":
-            elemento.send_keys("N")
-        elif tecla == "O":
-            elemento.send_keys("O")
-        elif tecla == "P":
-            elemento.send_keys("P")
-        elif tecla == "Q":
-            elemento.send_keys("Q")
-        elif tecla == "R":
-            elemento.send_keys("R")
-        elif tecla == "S":
-            elemento.send_keys("S")
-        elif tecla == "T":
-            elemento.send_keys("T")
-        elif tecla == "U":
-            elemento.send_keys("U")
-        elif tecla == "V":
-            elemento.send_keys("V")
-        elif tecla == "W":
-            elemento.send_keys("W")
-        elif tecla == "X":
-            elemento.send_keys("X")
-        elif tecla == "Y":
-            elemento.send_keys("Y")
-        elif tecla == "Z":
-            elemento.send_keys("Z")
+        teclas_mapa = {
+            "A": "A",
+            "B": "B",
+            "C": "C",
+            "D": "D",
+            "E": "E",
+            "F": "F",
+            "G": "G",
+            "H": "H",
+            "I": "I",
+            "J": "J",
+            "K": "K",
+            "L": "L",
+            "M": "M",
+            "N": "N",
+            "O": "O",
+            "P": "P",
+            "Q": "Q",
+            "R": "R",
+            "S": "S",
+            "T": "T",
+            "U": "U",
+            "V": "V",
+            "W": "W",
+            "X": "X",
+            "Y": "Y",
+            "Z": "Z"
+        }
+        elemento.send_keys(teclas_mapa[tecla])
 
 
+
+class CL_TeclasMapeadas_Funcao(BasePage):
+    def __init__(self, browser):
+        self.browser = browser
 
     def pressionar_tecla_funcao(self, locator, tecla):
         elemento = self.encontrar_elemento(locator)
-        if tecla == "F1":
-            elemento.send_keys(Keys.F1)
-        elif tecla == "F2":
-            elemento.send_keys(Keys.F2)
-        elif tecla == "F3":
-            elemento.send_keys(Keys.F3)
-        elif tecla == "F4":
-            elemento.send_keys(Keys.F4)
-        elif tecla == "F5":
-            elemento.send_keys(Keys.F5)
-        elif tecla == "F6":
-            elemento.send_keys(Keys.F6)
-        elif tecla == "F7":
-            elemento.send_keys(Keys.F7)
-        elif tecla == "F8":
-            elemento.send_keys(Keys.F8)
-        elif tecla == "F9":
-            elemento.send_keys(Keys.F9)
-        elif tecla == "F10":
-            elemento.send_keys(Keys.F10)
-        elif tecla == "F11":
-            elemento.send_keys(Keys.F11)
-        elif tecla == "F12":
-            elemento.send_keys(Keys.F12)
+        teclas_mapa = {
+            "F1": Keys.F1,
+            "F2": Keys.F2,
+            "F3": Keys.F3,
+            "F4": Keys.F4,
+            "F5": Keys.F5,
+            "F6": Keys.F6,
+            "F7": Keys.F7,
+            "F8": Keys.F8,
+            "F9": Keys.F9,
+            "F10": Keys.F10,
+            "F11": Keys.F11,
+            "F12": Keys.F12,
+        }
 
 
-    
+
+class CL_TeclasMapeadas_Especificas(BasePage):
+    def __init__(self, browser):
+        self.browser = browser
+
     def pressionar_tecla_especificas(self, locator, tecla):
         elemento = self.encontrar_elemento(locator)
         if tecla == "HOME":
             elemento.send_keys(Keys.HOME)
-        elif tecla == "END"
+        elif tecla == "END":
             elemento.send_keys(Keys.END)
-        elif tecla == "INSERT"
+        elif tecla == "INSERT":
             elemento.send_keys(Keys.INSERT)
         elif tecla == "DELETE":
             elemento.send_keys(Keys.DELETE)
-        elif tecla == "BACKSPACE"
+        elif tecla == "BACKSPACE":
             elemento.send_keys(Keys.BACKSPACE)
-        elif tecla == "TAB"
+        elif tecla == "TAB":
             elemento.send_keys(Keys.TAB)
-        elif tecla == ""
-            elemento.send_keys(Keys.)
-        elif tecla == ""
-            elemento.send_keys(Keys.)
-        elif tecla == ""
-            elemento.send_keys(Keys.)
+        # elif tecla == "":
+        #     elemento.send_keys(Keys.)
+        # elif tecla == "":
+        #     elemento.send_keys(Keys.)
+        # elif tecla == "":
+        #     elemento.send_keys(Keys.)
 
 
 
@@ -179,3 +151,4 @@ class CL_TeclasMapeadas(BasePage):
             elemento.send_keys(Keys.CONTROL)
         elif tecla == "LEFT_ALT":
             elemento.send_keys(Keys.LEFT_ALT)
+
