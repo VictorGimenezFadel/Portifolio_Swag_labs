@@ -26,8 +26,11 @@ class CL_TeclasMapeadas_Numpad(BasePage):
             "NUMBER8": Keys.NUMPAD8,
             "NUMBER9": Keys.NUMPAD9
         }
-        elemento.send_keys(teclas_mapa.get(tecla))
-
+        teclas_numpad = teclas_mapa.get(tecla)
+        if teclas_numpad:
+            elemento.send_keys(teclas_numpad)
+        else:
+            raise ValueError(f"Tecla '{tecla}' não é uma tecla do Numpad válida.")
 
 
 class CL_TeclasMapeadas_Numerica(BasePage):
@@ -48,7 +51,11 @@ class CL_TeclasMapeadas_Numerica(BasePage):
             "TECLA9": "9",
             "TECLA0": "0"
         }
-        elemento.send_keys(teclas_mapa.get(tecla))
+        teclas_numericas = teclas_mapa.get(tecla)
+        if teclas_numericas:
+            elemento.send_keys(teclas_numericas)
+        else:
+            raise ValueError(f"Tecla '{tecla}' não é uma tecla Numérica válida.")
 
 
 
@@ -86,7 +93,11 @@ class CL_TeclasMapeadas_Letra(BasePage):
             "Y": "Y",
             "Z": "Z"
         }
-        elemento.send_keys(teclas_mapa[tecla])
+        teclas_letras = teclas_mapa.get(tecla)
+        if teclas_letras:
+            elemento.send_keys(teclas_letras)
+        else:
+            raise ValueError(f"Tecla '{tecla}' não é uma tecla de Letra válida.")
 
 
 
@@ -108,8 +119,13 @@ class CL_TeclasMapeadas_Funcao(BasePage):
             "F9": Keys.F9,
             "F10": Keys.F10,
             "F11": Keys.F11,
-            "F12": Keys.F12,
+            "F12": Keys.F12
         }
+        teclas_funcao = teclas_mapa.get(tecla)
+        if teclas_funcao:
+            elemento.send_keys(teclas_funcao)
+        else:
+            raise ValueError(f"Tecla '{tecla}' não é uma tecla de Função válida.")
 
 
 
@@ -119,36 +135,29 @@ class CL_TeclasMapeadas_Especificas(BasePage):
 
     def pressionar_tecla_especificas(self, locator, tecla):
         elemento = self.encontrar_elemento(locator)
-        if tecla == "HOME":
-            elemento.send_keys(Keys.HOME)
-        elif tecla == "END":
-            elemento.send_keys(Keys.END)
-        elif tecla == "INSERT":
-            elemento.send_keys(Keys.INSERT)
-        elif tecla == "DELETE":
-            elemento.send_keys(Keys.DELETE)
-        elif tecla == "BACKSPACE":
-            elemento.send_keys(Keys.BACKSPACE)
-        elif tecla == "TAB":
-            elemento.send_keys(Keys.TAB)
-        # elif tecla == "":
-        #     elemento.send_keys(Keys.)
-        # elif tecla == "":
-        #     elemento.send_keys(Keys.)
-        # elif tecla == "":
-        #     elemento.send_keys(Keys.)
-
-
-
-
-        elif tecla == "ENTER":
-            elemento.send_keys(Keys.ENTER)
-        elif tecla == "ESPAÇO":
-            elemento.send_keys(Keys.SPACE)
-        elif tecla == "SHIFT":
-            elemento.send_keys(Keys.SHIFT)
-        elif tecla == "CTRL":
-            elemento.send_keys(Keys.CONTROL)
-        elif tecla == "LEFT_ALT":
-            elemento.send_keys(Keys.LEFT_ALT)
-
+        teclas_mapa = {
+            "HOME": Keys.HOME,
+            "END": Keys.END,
+            "INSERT": Keys.INSERT,
+            "DELETE": Keys.DELETE,
+            "BACKSPACE": Keys.BACKSPACE,
+            "TAB": Keys.TAB,
+            "PgUp": Keys.PAGE_UP,
+            "PgDn": Keys.PAGE_DOWN,
+            "ENTER": Keys.ENTER,
+            "ESPAÇO": Keys.SPACE,
+            "SHIFT": Keys.SHIFT,
+            "CTRL": Keys.CONTROL,
+            "LEFT_ALT": Keys.LEFT_ALT,
+            "ESC": Keys.ESCAPE,
+            "PAUSE": Keys.PAUSE,
+            "ARROW_UP": Keys.ARROW_UP,
+            "ARROW_DOWN": Keys.ARROW_DOWN,
+            "ARROW_LEFT": Keys.ARROW_LEFT,
+            "ARROW_RIGHT": Keys.ARROW_RIGHT,
+        }
+        teclas_especificas = teclas_mapa.get(tecla)
+        if teclas_especificas:
+            elemento.send_keys(teclas_especificas)
+        else:
+            raise ValueError(f"Tecla '{tecla}' não é uma tecla Especifica válida.")
