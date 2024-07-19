@@ -91,7 +91,8 @@ class CL_TeclasMapeadas_Letra(BasePage):
             "W": "W",
             "X": "X",
             "Y": "Y",
-            "Z": "Z"
+            "Z": "Z",
+            "Ç": "Ç",
         }
         teclas_letras = teclas_mapa.get(tecla)
         if teclas_letras:
@@ -161,3 +162,21 @@ class CL_TeclasMapeadas_Especificas(BasePage):
             elemento.send_keys(teclas_especificas)
         else:
             raise ValueError(f"Tecla '{tecla}' não é uma tecla Especifica válida.")
+
+
+
+class CL_TeclasMapeadas_AtalhosTecla(BasePage): # Mapear os demais atalhos de acordo com a necessidade
+    def __init__(self, browser):
+        self.browser = browser
+
+    def pressionar_atalho_teclas(self, locator, tecla):
+        elemento = self.encontrar_elemento(locator)
+        teclas_mapa = {
+            ("Ctrl", "C"): "copied_text",   # Copiar texto
+            ("Ctrl", "V"): "pasted_text",   # Colar texto
+        }
+        atalho_teclas = teclas_mapa.get(tecla)
+        if atalho_teclas:
+            elemento.send_keys(atalho_teclas)
+        else:
+            raise ValueError(f"Tecla '{tecla}' não é uma tecla de Letra válida.")
