@@ -13,11 +13,11 @@ SwagLabs/
 │   ├── home_page.py
 │   ├── infos_produtos_page.py
 │   └── login_page.py
-└── Testes/
-    ├── __init__.py
-    ├── test_about.py
-    ├── test_carrinho.py
-    ├── test_checkout.py
-    ├── test_home.py
-    └── test_login.py
-
+├── Testes/
+│   ├── __init__.py
+│   ├── test_about.py
+│   ├── test_carrinho.py
+│   ├── test_checkout.py
+│   ├── test_home.py
+│   └── test_login.py
+└── conftest.py
