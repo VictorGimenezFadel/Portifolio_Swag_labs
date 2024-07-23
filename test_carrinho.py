@@ -6,24 +6,23 @@ Esse teste está em desenvolvimento
 # Import dos arquivos .py e das classes presentes dentro deles
 import pytest
 from conftest import browser
-from carrinho_page import (
+from Pages.carrinho_page import (
     CL_RemoverItens_Carrinho,
     CL_ContinueShopping,
-    CL_RealizarCheckout,
 )
-from home_page import (
+from Pages.home_page import (
     CL_HomePage,
     CL_AdicionarItens_Carrinho,
     CL_AcessarCarrinho,
 )
-from infos_produtos_page import (
+from Pages.infos_produtos_page import (
     CL_VoltarPara_Produtos,
 )
-from login_page import (
+from Pages.login_page import (
     CL_LoginValido,
 )
-from verificar_elementos import (
-    Cl_VerificarElementos_ItensCarrinho
+from GlobalFeatures.verificar_elementos import (
+    Cl_VerificarElementos_ItensCarrinho,
 )
 
 
