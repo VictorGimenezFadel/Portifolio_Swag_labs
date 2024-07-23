@@ -6,36 +6,36 @@ Esse teste está em desenvolvimento
 # Import dos arquivos .py e das classes presentes dentro deles
 import pytest
 from conftest import browser
-from carrinho_page import (
+from Pages.carrinho_page import (
     CL_RemoverItens_Carrinho,
     CL_ContinueShopping,
     CL_RealizarCheckout,
 )
-from checkout_page import (
+from Pages.checkout_page import (
     CL_InfosCheckout,
     CL_ContinueCheckout,
     CL_FinalizarCheckout,
     CL_Voltar_PagInicial,
 )
-from home_page import (
+from Pages.home_page import (
     CL_HomePage,
     CL_AdicionarItens_Carrinho,
     CL_AcessarCarrinho,
 )
-from infos_produtos_page import (
+from Pages.infos_produtos_page import (
     CL_VoltarPara_Produtos,
 )
-from login_page import (
+from Pages.login_page import (
     CL_LoginValido,
 )
-from verificar_elementos import (
+from GlobalFeatures.verificar_elementos import (
     Cl_VerificarElementos_ItensCarrinho
 )
 
 
 @pytest.mark.usefixtures("browser")
 @pytest.mark.checkout  # mark para executar o teste através do pytest
-class TestCT05_SwagLabs_about:
+class TestCT05_SwagLabs_checkout:
     def test_ct05_swaglabs_checkout(self, browser):
         # Tela de login
 
