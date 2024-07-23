@@ -27,8 +27,8 @@ from GlobalFeatures.verificar_elementos import (
 
 
 @pytest.mark.usefixtures("browser")
-@pytest.mark.about  # mark para executar o teste através do pytest
-class TestCT04_SwagLabs_about:
+@pytest.mark.carrinho  # mark para executar o teste através do pytest
+class TestCT04_SwagLabs_carrinho:
     def test_ct04_swaglabs_carrinho(self, browser):
         # Tela de login
 
