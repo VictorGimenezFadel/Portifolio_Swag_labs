@@ -6,24 +6,22 @@ Esse teste está em desenvolvimento
 # Import dos arquivos .py e das classes presentes dentro deles
 import pytest
 from conftest import browser
-from home_page import (
+from Pages.home_page import (
     CL_HomePage,
     CL_AdicionarItens_Carrinho,
 )
-from infos_produtos_page import (
+from Pages.infos_produtos_page import (
     CL_VoltarPara_Produtos,
 )
-from login_page import (
+from Pages.login_page import (
     CL_LoginValido,
 )
 
 
 @pytest.mark.usefixtures("browser")
-@pytest.mark.navegar # mark para executar o teste através do pytest
-
-
-class TestCT01_Swag_labs:
-    def test_ct01_swaglabs_navegação(self, browser):
+@pytest.mark.home # mark para executar o teste através do pytest
+class TestCT01_SwagLabs_home:
+    def test_ct01_swaglabs_home(self, browser):
 
         # Tela de login
 
