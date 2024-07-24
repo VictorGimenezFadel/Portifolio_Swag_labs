@@ -2,7 +2,6 @@ SwagLabs/
 ├── GlobalFeatures/
 │   ├── __init__.py
 │   ├── base_page.py
-│   ├── conftest.py
 │   ├── mapeamento_teclas.py
 │   └── verificar_elementos.py
 ├── Pages/
